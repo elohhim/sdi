@@ -1,0 +1,446 @@
+\documentclass[t]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{polski}
+\usepackage{graphicx} 
+\usepackage{epstopdf}
+\usepackage{listings}
+
+\definecolor{mint}{rgb}{0.96, 1, 0.98}
+\lstset
+{
+    language=[LaTeX]TeX,
+    inputencoding=utf8,
+    breaklines=true,
+    basicstyle=\tt\scriptsize,
+    keywordstyle=\color{red},
+    identifierstyle=\color{blue},
+    frame=lines,
+    backgroundcolor=\color{mint}
+}
+
+%%%Komendy
+%%%Beamer
+\newcommand{\beamer}{
+{\rmfamily\textsc{Beamer}}
+}
+
+\usetheme{Copenhagen}
+\usecolortheme{crane}
+\setbeamertemplate{navigation symbols}{} 
+\expandafter\def\expandafter\insertshorttitle\expandafter{%
+  \insertshorttitle\hfill%
+  \insertframenumber\,/\,\inserttotalframenumber}
+\mode<presentation>
+\title{Seminarium dyplomowe inżynierskie}
+\subtitle{Temat: Aplikacja WYSIWYG do tworzenia prezentacji multimedialnych z wykorzystaniem klasy dokumentów \beamer \LaTeX-a}
+\author[J.A. Kumor]{Jan Adam Kumor}
+\institute[IAiIS]{\begin{minipage}[c]{2.0cm}
+			\includegraphics[width = 1.5cm]{IAiISLogo.eps}
+		\end{minipage} Instytut Automatyki i Informatyki Stosowanej\\[0.6cm]}
+\date[2015-10-23]{23 października 2015}
+
+\usepackage{graphicx}
+
+\begin{document}
+
+\AtBeginSubsection{
+	\begin{frame}
+		\frametitle{Konspekt}
+		\tableofcontents[currentsection, currentsubsection]
+	\end{frame}
+}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\section{Wprowadzenie}
+\subsection{}
+
+\begin{frame}[t]
+	\frametitle{Kto, co i gdzie?}
+	\begin{description}[style=multiline]
+		\item[Autor:] Jan Kumor, semestr 7. specjalność SID
+		\item[Opiekun:] prof. nzw. dr hab. inż. Maciej Ławryńczuk \\ Zespół Technik Sterowania \\ Zakład Automatyki i Inżynierii Oprogramowania \\ Instytut Automatyki i Informatyki Stosowanej
+		\item[Temat:] \emph{Aplikacja WYSIWYG do tworzenia prezentacji multimedialnych z wykorzystaniem klasy dokumentów} \beamer{} \LaTeX-a
+	\end{description}
+\end{frame}
+
+\section{Omówienie tematyki pracy}
+
+\subsection{Podstawowe terminy}
+
+\begin{frame}
+	\frametitle{Systemy WYSIWYG}
+	\begin{block}{\emph{WYSIWYG}}
+		skrót od ang. \emph{What You See Is What You Get}
+	\end{block}
+	\begin{itemize}
+		\item Akronim ten określa metodę pracy edytorów
+		\item System WYSIWYG wyświetla zawartość w trakcie edycji w sposób odpowiadający efektowi końcowemu
+		\item Rodzaje systemów WYSIWYG:
+			\begin{itemize}
+				\item procesory tekstu np. MS Word
+				\item edytory grafiki np. GIMP
+				\item programy CAD np. Autodesk AutoCAD
+				\item edytory stron www np. tryb graficzny w Pajączek
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{\TeX\ i \LaTeX\ }
+	\begin{quotation}
+		\TeX\ – komputerowy system profesjonalnego składu drukarskiego, obejmujący zarówno specjalny język, jak i kompilator przygotowujący pliki w formatach wymaganych przez urządzenia graficzne (drukarki, naświetlarki).\footnote{Wikipedia, https://pl.wikipedia.org/wiki/TeX}
+	\end{quotation}
+	\begin{quotation}
+	[...] LaTeX nie jest samodzielnym środowiskiem programistycznym. Jest to jedynie zestaw makr stanowiących nadbudowę dla systemu składu TeX, automatyzujących wiele czynności związanych z procesem poprawnego składania tekstu.\footnote{Wikipedia, https://pl.wikipedia.org/wiki/LaTeX}
+	\end{quotation}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Fragment przykładowego dokumentu \LaTeX}
+	\begin{lstlisting}
+		\section{Szablony predefiniowanych ukladow slajdow}
+
+\subsection{Uwagi ogolne}
+W rozdziale tym zaprezentowane zostaly szablony slajdow, ktore bedzie mogl wybrac uzytkownik w aplikacji \projektor. Opis kazdego szablonu sklada sie z:
+\begin{itemize}
+        \item{wizualizacji slajdu}
+        \item{krotkiego opisu tekstowego}
+        \item{parametrow (opcji) za pomoca, ktorych uzytkownik bedzie mial mozliwosc spersonalizowania slajdu}
+        \item{kodu \LaTeX, z ktorego generowany jest slajd}
+\end{itemize}
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[plain]
+	\begin{figure}[T]
+		\flushleft
+		\hspace{-1cm}\includegraphics[width=\textwidth]{LaTeX_diagram.png}
+		\caption{Relacje między źródłami \TeX\ i \LaTeX\ a formatami wyjściowymi. Źródło: Wikibooks. Latex — wikibooks, the free textbook project, \url{https://en.wikibooks.org/wiki/LaTeX/Basics\#Compilation}}
+		\label{}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Klasa dokumentów \beamer\ }
+	\begin{itemize}
+		\item Dedykowana tworzenia prezentacji multimedialnych
+		\item Dostarcza środowisko \texttt{frame} (z ang. \emph{frame}  - ramka)
+		\item Środowisko \texttt{frame} dostarcza mechanizm \texttt{overlay specifications} (z ang. \emph{overlay} - nakładka)
+		\begin{alertblock}{Uwaga}
+			Ramka nie jest tożsama ze slajdem prezentacji. Z jednej ramki może zostać wygenerowane kilka slajdów.
+		\end{alertblock}
+		\item Możliwość wygenerowania tzw. \emph{handouts} czyli slajdów z pominięciem \texttt{overlay specifications} 
+		\item Pakiet \emph{beamerarticle} pozwala na wygenerowanie treści prezentacji w formie tekstowej
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Środowisko \texttt{frame} i mechanizm \texttt{overlay specifications}}
+	\begin{columns}[T]
+		\begin{column}{.55\textwidth}
+			\begin{lstlisting}
+				\begin{frame}
+					\frametitle{Przyklad overlay specifications}
+					\begin{itemize}
+						\item <1-> \alert<1>{Punkt pierwszy}
+						\item <2-> \alert<2>{Punkt drugi}
+					\end{itemize}
+				\end{frame }
+			\end{lstlisting}
+		\end{column}
+		\begin{column}{.4\textwidth}
+			\framebox{
+				\includegraphics[page=1,width=.9\textwidth]{overlay_example.pdf}
+			}\\
+			\framebox{
+				\includegraphics[page=2,width=.9\textwidth]{overlay_example.pdf}
+			}
+		\end{column}		
+	\end{columns}
+\end{frame}
+
+\subsection{Istniejące rozwiązania}
+
+\begin{frame}[T]
+	\frametitle{Przykład 1. Gummi \footnote{\url{http://gummi.midnightcoding.org/}}}
+		\begin{columns}[T]
+			\begin{column}{.15\textwidth}
+				\includegraphics[width=2cm]{gummi_logo.png}
+			\end{column}
+			\begin{column}{.85\textwidth}
+				\begin{itemize}
+					\item Typowe dla dokumentów \LaTeX\ workflow - plik \emph{.tex} i podgląd wyniku kompilacji
+					\item Automatyczna kompilacja dokumentu po każdej wprowadzonej zmianie
+					\item Dostępne  podstawowe operacje na tekście:
+					\begin{itemize}
+						\item \textbf{pogrubienie}, \emph{kursywa} oraz \underline{podkreślenie} tekstu
+						\item wyrównanie tekstu do lewej i prawej strony oraz wyśrodkowanie
+					\end{itemize}
+					\item Wsparcie GUI przy wstawianiu grafiki, tabel, macierzy i bibliografii
+				\end{itemize}
+			\end{column}		
+		\end{columns}
+\end{frame}
+
+\begin{frame}[T]
+	\frametitle{Przykład 1. Gummi}
+	\begin{figure}[p]
+   	    \centering
+		\includegraphics[width=.95\textwidth]{gummi_prtscn.png}
+   	    \caption{Okno programu Gummi}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}[t]
+	\frametitle{Przykład 2. LyX – The Document Processor \footnote{\url{http://www.lyx.org/}}}
+		\begin{columns}[T]
+			\begin{column}{.15\textwidth}
+				\includegraphics[width=2cm]{lyx_logo.png}
+			\end{column}
+			\begin{column}{.85\textwidth}
+				\begin{itemize}
+					\item Wsparcie GUI dla większości funkcji \LaTeX\ 
+					\item Wiele szablonów dla poszczególnych klas dokumentów
+					\item Teoretycznie nie wymaga znajomości \LaTeX\ 
+					\item Wyświetla w przybliżeniu wygląd treści dokumentu docelowego
+					\item Zapis plików w formacie tekstowym wzorowanym na xml
+					\item Współpraca z wieloma konwerterami
+				\end{itemize}
+			\end{column}		
+		\end{columns}
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Przykład 2. LyX – The Document Processor}
+		\begin{figure}[p]
+     	    \centering
+			\includegraphics[width=.95\textwidth]{lyx_prtscn.png}
+     	    \caption{Okno programu LyX}
+		\end{figure}
+		
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Przykład 3. BaKoMa \TeX\ (True WYSIWYG \LaTeX\ System)\footnote{\url{http://www.bakoma-tex.com/}}}
+		\begin{columns}[T]
+			\begin{column}{.15\textwidth}
+				\includegraphics[width=2cm]{bakoma_logo.png}
+			\end{column}
+			\begin{column}{.85\textwidth}
+				\begin{itemize}
+					\item Pakiet aplikacji komercyjnych 
+					\item Wsparcie GUI dla większości funckji \LaTeX\ 
+					\item Obsługa wielu klas dokumentów z poziomu GUI
+					\item Prawdziwy WYSIWYG w czasie rzeczywistym
+					\item W tle działa silnik \TeX - tylko dla aktualnie zmienianej strony
+					\item Dwukierunkowa synchronizacja między plikiem żródłowym a widokiem
+				\end{itemize}
+			\end{column}		
+		\end{columns}
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Przykład 3. BaKoMa \TeX\ (True WYSIWYG \LaTeX\ System)}
+		\begin{figure}[p]
+     	    \centering
+			\includegraphics[width=.95\textwidth]{bakoma_prtscn.png}
+     	    \caption{Okno programu BaKoMa Word}
+		\end{figure}
+		
+\end{frame}
+
+\begin{frame}
+	\frametitle{Istniejące rozwiązania - ogólny obraz}
+	\begin{itemize}
+		\item Istnieje wiele narzędzi wspomagających pracę z \LaTeX-em
+		\item O różnym stopniu złożoności i funkcjonalności
+		\item Brak rozwiązań dedykowanych stricte edycji dokumentów klasy \beamer		
+		\item Jednak większa część funkcji to czysty \LaTeX
+	\end{itemize}
+	\begin{block}{Wniosek}
+		Tworzona aplikacja powinna dostarczać wsparcia dla zestawu funkcji \LaTeX-a wzorowanego na istniejących rozwiązaniach i rozszerzyć je o mechanizmy dedykowane klasie \beamer.
+	\end{block}
+\end{frame}
+
+\subsection{Sformułowanie zadania}
+
+\begin{frame}
+	\frametitle{Dekompozycja problemu}
+	W celu łatwiejszej analizy dokonano podziału aplikacji na obszary zgodnie ze schematem.
+	\begin{figure}[htp]
+		\centering
+		\includegraphics[width=.85\textwidth]{obszary.png}
+		\label{obsz}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Interfejs do tworzenia prezentacji}
+	\begin{itemize}
+		\item Typowe funkcje edycyji tekstu i akapitów
+		\item Wsparcie przy tworzeniu elementów osadzonych (grafiki, tabele, bloki)
+		\item Tworzenie slajdów z użyciem predefiniowanych szablonów
+		\item Wsparcie dla mechanizmu \texttt{overlay specifications}
+		\item Zarządzanie strukturą dokumentu
+		\begin{itemize}
+			\item porządkowanie slajdów
+			\item tworzenie sekcji i podsekcji
+			\item mechanizmy \texttt{AtBeginSection} i \texttt{AtBeginSubsection}
+			\item zarządzanie bibliografią
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[T]
+	\frametitle{Przykłady predefiniowanych szablonów}
+	\only<1>{
+		\begin{columns}[T]
+		\begin{column}{.5\textwidth}
+			\centering
+			\framebox{
+				\includegraphics[page=7, width=\textwidth]{templates.pdf}
+			}
+		\end{column}
+		\begin{column}{.5\textwidth}
+			\centering
+			\framebox{
+				\includegraphics[page=14, width=\textwidth]{templates.pdf}
+			}
+		\end{column}
+		\end{columns}
+	}
+	\only<2>{
+			\begin{columns}[T]
+		\begin{column}{.5\textwidth}
+			\centering
+			\framebox{
+				\includegraphics[page=22, width=\textwidth]{templates.pdf}
+			}
+		\end{column}
+		\begin{column}{.5\textwidth}
+			\centering
+			\framebox{
+				\includegraphics[page=30, width=\textwidth]{templates.pdf}
+			}
+		\end{column}
+		\end{columns}
+	}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Generator kodu \LaTeX}
+	\begin{itemize}
+		\item Przekształcenie wewnętreznego modelu na plik .tex
+		\item Powiązanie wynikowego pliku z modelem w celu synchronizacji
+		\item Ważna wydajność - potencjalnie najczęśćiej wołany fragment kodu własnego
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Moduł prezentacji - wariant I - kompilacja do formatu DVI}
+	\begin{columns}[T]
+		\begin{column}{.70\textwidth}
+			\begin{itemize}
+				\item DVI z ang. \emph{DeVice Independent}
+				\item format binarny opisujący wizualny układ dokumentu
+				\item odczyt i tworzenie łatwe do zaprogramowania
+				\item interpretacja poleceń maszyny wirtualnej
+			\end{itemize}
+		\end{column}
+		\begin{column}{.3\textwidth}
+			\includegraphics[width=\textwidth]{synch3.png}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Moduł prezentacji - wariant II - kompilacja do formatu PDF}
+	\begin{columns}[T]
+		\begin{column}{.70\textwidth}
+			\begin{itemize}
+				\item PDF z ang. \emph{Portable Document Format}
+				\item opis dokumentu w okrojonym języku PostScript
+				\item obsługa hiperłącz
+				\item najpopularniejszy format dokumentów
+				\item mechanizm SyncTeX
+			\end{itemize}
+		\end{column}
+		\begin{column}{.3\textwidth}
+			\includegraphics[width=\textwidth]{synch2.png}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Moduł prezentacji - możliwość integracji aplikacji zewnętrznej}
+	\begin{figure}[htp]
+		\centering
+		\includegraphics[width=.85\textwidth]{sumatra.png}
+		\label{sum}
+	\end{figure}
+\end{frame}
+
+\section{Dotychczasowe wyniki pracy}
+\subsection{}
+
+\begin{frame}
+	\frametitle{SDI-1 czyli poprzedni semestr}
+		PDI-1 poświęcona została:
+		\begin{itemize}
+			\item zapoznaniu z technologią \LaTeX\ 
+			\item zapoznaniu z klasą dokumentów \beamer\footnote{Na podstawie \emph{T. Tantau, J. Wright, and V. Miletic. The beamer class user guide for version 3.36., 2013 } dostępne online na \url{http://www.ctan.org}}
+			\item przygotowaniu wzorców dla szablonów slajdów
+			\item typowaniu funkcjonalności \LaTeX-a, które należy przenieść do aplikacji
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{SDI-2 czyli początek bieżącego semstru}
+	Początek PDI-2 poświęcono na:
+	\begin{itemize}
+		\item prace koncepcyjne dotyczące architektury aplikacji
+		\item uzupełnienie wiedzy dotyczącej \LaTeX-a m.in. mechanizm tabel i elementów blokowych
+	\end{itemize}
+\end{frame}
+
+\section{W ramach podsumowania - plan prac}
+\subsection{}
+
+\begin{frame}
+	\frametitle{Program minimum}
+	\begin{enumerate}
+		\item Wybór głównych narzędzi programistycznych
+			\begin{itemize}
+				\item język programowania
+				\item biblioteka GUI
+				\item inne narzędzia
+			\end{itemize}
+		\item Równoległa implementacja następujących obszarów:
+			\begin{itemize}
+				\item mechanizmy generowania kodu dokumentu klasy Beamer
+				\item GUI umożliwiające wygodne tworzenie i edycję slajdów
+			\end{itemize}
+		\item Opracowanie i implementacja modułu prezentacji + integracja z etapem poprzednim
+		\item Testowanie działania aplikacji
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Kolejne cele}
+	\begin{itemize}
+		\item Mechanizm synchronizacji modułu prezentacji z GUI (SyncTeX)
+		\item Mechanizm zapisu i odczytu plików .tex
+		\item Przewidywana jest konieczność prac optymalizujących czas reakcji modułu prezentacji
+	\end{itemize}	
+\end{frame}
+
+\begin{frame}[c]
+	\Huge Dziękuję
+\end{frame}
+
+\end{document}

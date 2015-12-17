@@ -1,0 +1,5 @@
+\beamer@endinputifotherversion {3.10pt}
+\beamer@sectionintoc {1}{Cel pracy i mo\IeC {\.z}liwe zastosowania}{3}{0}{1}
+\beamer@sectionintoc {2}{Istniej\IeC {\k a}ce rozwi\IeC {\k a}zania}{6}{0}{2}
+\beamer@sectionintoc {3}{Zapropownowane rozwi\IeC {\k a}zanie i wynik pracy}{11}{0}{3}
+\beamer@sectionintoc {4}{Wnioski i podsumowanie}{13}{0}{4}
