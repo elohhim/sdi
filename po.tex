@@ -166,61 +166,97 @@
 \begin{frame}
 	\frametitle{Architektura rozwiązania}
 	Wzorzec MVC pozwala na wygodne rozdzielenie zakresów odpowiedzialności poszczególnych części aplikacji.\\
-	\vfill
-	Rysunek MVC
+	\begin{center}
+		\includegraphics[width=0.75\textwidth]{mvc.png}
+	\end{center}
 \end{frame}
 
 \begin{frame}
-	\frametitle{M - Warstwa modelu}
-	\begin{columns}[T]
-		\begin{column}{.6\textwidth}
+	\frametitle{Warstwa M - Model}
+	\begin{itemize}
+		\item Python 3.5
+		\item Trójwarstwowa strukrura modelu
 			\begin{itemize}
-				\item Python 3.5
-				\item Trójwarstwowa strukrura modelu
-					\begin{itemize}
-						\item Warstwa abstrakcyjna
-						\item Warstwa dokumentu \TeX\
-						\item Warstwa generowanego kodu
-					\end{itemize}
-				
+				\alert<1>{\item Warstwa abstrakcyjna}
+				\alert<2>{\item Warstwa dokumentu \TeX\ }
+				\alert<3>{\item Warstwa generowanego kodu}
 			\end{itemize}
-		\end{column}
-		\begin{column}{.4\textwidth}
-			\includegraphics[width=2cm]{bakoma_logo.png}\\
-			Rysunek warstw
-		\end{column}		
-	\end{columns}
+	\end{itemize}
+	\hspace*{-11mm}
+	\includegraphics<1-3>[width=\paperwidth]{model_layers.png}
+	\includegraphics<4>[width=\paperwidth]{model_layers_arrows.png}
+	
 \end{frame}
 
 \begin{frame}
-	\frametitle{M - Warstwa modelu cd.}
+	\frametitle{Warstwa M - Model}
+	Realizuje większość logiki aplikacji
 	\begin{itemize}
 		\item Generowanie kodu \LaTeX\ - wzorzec kompozytu
 		\item Zapis i odczyt projektu - format JSON				
 		\item API: metody manipulacji modelem + wzorzec obserwatora
 	\end{itemize}
-	\vfill Rysunek obserewatora i rysunek kompozytu
+	\hspace*{-7mm}
+	\begin{minipage}{\paperwidth}
+		\begin{minipage}{.5\paperwidth}
+			\begin{figure}
+				\includegraphics[width=.4\paperwidth]{composite.png}
+				\caption{"Composite UML class diagram"\\autorstwa Trashtoyderivative}
+				\label{cap}
+			\end{figure}
+		\end{minipage}
+		\begin{minipage}{.5\paperwidth}
+			\begin{figure}
+				\includegraphics[width=.4\paperwidth]{observer.png}
+				\caption{"Observer classes pl"\\autorstwa Zyxist}
+				\label{obs}
+			\end{figure}
+		\end{minipage}
+	\end{minipage}
 \end{frame}
 
 \begin{frame}
-	\frametitle{VC - Warstwa widoku i kontrolera}
+	\frametitle{Warstwa VC - Widok i kontroler}
+	Umożliwia interakcję użytkownika z aplikacją.
 	\begin{itemize}
-		\item 
+		\item Sterowanie zdarzeniami
+		\item Dwa współpracujące wątki: widoku i kontrolera
+		\item widok zaimplementowany z użyciem frameworku Kivy
 	\end{itemize}
 \end{frame}
 
+\begin{frame}
+	\frametitle{Warstwa VC - Widok i kontroler cd}
+
+	\raisebox{-.4cm}{\includegraphics[width=1.2cm]{kivy_logo.png}} Framework Kivy\footnote{http://kivy.org/}
+
+	\begin{itemize}
+		\item Otwarta biblioteka języka Python do tworzenia graficznego interfejsu użytkownika 
+		\item Wieloplatformowość: \emph{Linux}, \emph{Windows}, \emph{OS X}, \emph{Android} i \emph{iOS}
+		\item Szerokie wsparcie dla NUI (\emph{Natural User Interfaces})
+		\item Dedykowany język opisu interfejsu \emph{kivy language}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+	\frametitle{Budowa interfejsu}
+	\hspace*{-11mm}
+	\includegraphics[width=\paperwidth]{rapidbeamer.png}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Moduł prezentacji}
+	\centering \alert{Stan zaawansowania pracy nie pozwala powiedzieć aktualnie nic na ten temat...}
+\end{frame}
 
 \section{Wnioski i podsumowanie}
 
 \begin{frame}
-	\frametitle{SDI-1 czyli poprzedni semestr}
-		PDI-1 poświęcona została:
-		\begin{itemize}
-			\item zapoznaniu z technologią \LaTeX\ 
-			\item zapoznaniu z klasą dokumentów \beamer\footnote{Na podstawie \emph{T. Tantau, J. Wright, and V. Miletic. The beamer class user guide for version 3.36., 2013 } dostępne online na \url{http://www.ctan.org}}
-			\item przygotowaniu wzorców dla szablonów slajdów
-			\item typowaniu funkcjonalności \LaTeX-a, które należy przenieść do aplikacji
-		\end{itemize}
+	\frametitle{Wnioski i podsumowanie}
+	\begin{itemize}
+		\item Udało się stworzyć aplikację umożliwiającą wygodne i szybkie tworzenie prezentacji multimedialnych.
+		\item \alert{Więcej wniosków mogłoby dotyczyć testów wydajnościowych generatora kodu lub mechanizmu prezentacji}
+	\end{itemize}
 \end{frame}
 
 \begin{frame}[c]
