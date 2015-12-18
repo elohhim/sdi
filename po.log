@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.10.21)  17 DEC 2015 20:53
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.10.21)  18 DEC 2015 04:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1263,11 +1263,133 @@ Overfull \vbox (14.04012pt too high) detected at line 164
 
 [12
 
- <./rapidbeamer.png>] (./po.toc) [13
+ <./rapidbeamer.png>] <mvc.png, id=204, 475.7775pt x 295.1025pt>
+File: mvc.png Graphic file (type png)
 
-] [14
+<use mvc.png>
+Package pdftex.def Info: mvc.png used on input line 172.
+(pdftex.def)             Requested size: 230.46739pt x 142.94891pt.
+ [13
 
-] [15
+ <./mvc.png>]
+<model_layers.png, id=218, 1020.81375pt x 373.395pt>
+File: model_layers.png Graphic file (type png)
+ <use model_layers.png>
+Package pdftex.def Info: model_layers.png used on input line 189.
+(pdftex.def)             Requested size: 364.19536pt x 133.21422pt.
+
+Overfull \hbox (28.02525pt too wide) in paragraph at lines 189--189
+|  []  
+ []
+
+
+Overfull \vbox (6.2033pt too high) detected at line 189
+ []
+
+[14
+
+ <./model_layers.png>]
+File: model_layers.png Graphic file (type png)
+ <use model_layers.png>
+Package pdftex.def Info: model_layers.png used on input line 189.
+(pdftex.def)             Requested size: 364.19536pt x 133.21422pt.
+
+Overfull \hbox (28.02525pt too wide) in paragraph at lines 189--189
+|  []  
+ []
+
+
+Overfull \vbox (6.2033pt too high) detected at line 189
+ []
+
+[15
+
+]
+File: model_layers.png Graphic file (type png)
+ <use model_layers.png>
+Package pdftex.def Info: model_layers.png used on input line 189.
+(pdftex.def)             Requested size: 364.19536pt x 133.21422pt.
+
+Overfull \hbox (28.02525pt too wide) in paragraph at lines 189--189
+|  []  
+ []
+
+
+Overfull \vbox (6.2033pt too high) detected at line 189
+ []
+
+[16
+
+] <model_layers_arrows.png, id=251, 1020.81375pt x 373.395pt>
+File: model_layers_arrows.png Graphic file (type png)
+
+<use model_layers_arrows.png>
+Package pdftex.def Info: model_layers_arrows.png used on input line 189.
+(pdftex.def)             Requested size: 364.19536pt x 133.21422pt.
+
+Overfull \hbox (28.02525pt too wide) in paragraph at lines 189--189
+|  []  
+ []
+
+
+Overfull \vbox (6.2033pt too high) detected at line 189
+ []
+
+[17
+
+ <./model_layers_arrows.png>]
+<composite.png, id=263, 642.4pt x 414.54875pt>
+File: composite.png Graphic file (type png)
+ <use composite.png>
+Package pdftex.def Info: composite.png used on input line 216.
+(pdftex.def)             Requested size: 145.67592pt x 94.00319pt.
+
+<observer.png, id=264, 642.4pt x 312.16624pt>
+File: observer.png Graphic file (type png)
+ <use observer.png>
+Package pdftex.def Info: observer.png used on input line 216.
+(pdftex.def)             Requested size: 145.67592pt x 70.78691pt.
+
+Overfull \hbox (2.41777pt too wide) in paragraph at lines 216--216
+[]$[]$ $[]$ 
+ []
+
+
+Overfull \hbox (39.40636pt too wide) in paragraph at lines 216--216
+|  $[]$  
+ []
+
+[18
+
+ <./composite.png> <./observer.png>] [19
+
+]
+<kivy_logo.png, id=291, 64.24pt x 64.24pt>
+File: kivy_logo.png Graphic file (type png)
+ <use kivy_logo.png>
+Package pdftex.def Info: kivy_logo.png used on input line 239.
+(pdftex.def)             Requested size: 34.14322pt x 34.1431pt.
+ [20
+
+ <./kivy_logo.png>]
+File: rapidbeamer.png Graphic file (type png)
+ <use rapidbeamer.png>
+Package pdftex.def Info: rapidbeamer.png used on input line 245.
+(pdftex.def)             Requested size: 364.19536pt x 207.05641pt.
+
+Overfull \hbox (28.02525pt too wide) in paragraph at lines 245--245
+[]|  []  
+ []
+
+[21
+
+] [22
+
+] (./po.toc) [23
+
+] [24
+
+] [25
 
 ]
 \tf@nav=\write6
@@ -1279,11 +1401,11 @@ Overfull \vbox (14.04012pt too high) detected at line 164
 \tf@snm=\write8
 \openout8 = `po.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 183.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 183.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 266.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 266.
  (./po.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 183.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 183.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 266.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 266.
 Package rerunfilecheck Info: File `po.out' has not changed.
 (rerunfilecheck)             Checksum: 6AEF6ED3ACBCB327C18A969EB5DF0243;256.
 
@@ -1291,33 +1413,32 @@ Package rerunfilecheck Info: File `po.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 183.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 266.
  ) 
 Here is how much of TeX's memory you used:
- 18708 strings out of 495024
- 338342 string characters out of 3181153
- 454251 words of memory out of 3000000
- 21371 multiletter control sequences out of 15000+200000
+ 18782 strings out of 495024
+ 339398 string characters out of 3181153
+ 454250 words of memory out of 3000000
+ 21418 multiletter control sequences out of 15000+200000
  31105 words of font info for 78 fonts, out of 3000000 for 9000
  34 hyphenation exceptions out of 8191
  49i,19n,67p,391b,833s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/john/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss2488.600pk> </home/jo
-hn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsi0900.600pk> </home/john/.texmf-va
-r/fonts/pk/ljfour/jknappen/ec/ecss0900.600pk> </home/john/.texmf-var/fonts/pk/l
-jfour/jknappen/ec/ecsi0800.600pk> </home/john/.texmf-var/fonts/pk/ljfour/jknapp
-en/ec/ecsx0800.600pk> </home/john/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt09
-00.600pk> </home/john/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsi1000.600pk> </
-home/john/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1000.600pk> </home/john/.t
-exmf-var/fonts/pk/ljfour/jknappen/ec/ecss1000.600pk> </home/john/.texmf-var/fon
-ts/pk/ljfour/jknappen/ec/ecsi1095.600pk> </home/john/.texmf-var/fonts/pk/ljfour
-/jknappen/ec/ecss0800.600pk> </home/john/.texmf-var/fonts/pk/ljfour/jknappen/ec
-/eccc1095.600pk> </home/john/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss1095.60
-0pk> </home/john/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss1440.600pk> </home/
-john/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0600.600pk>
-Output written on po.pdf (15 pages, 782716 bytes).
+hn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0900.600pk> </home/john/.texmf-va
+r/fonts/pk/ljfour/jknappen/ec/ecsi0800.600pk> </home/john/.texmf-var/fonts/pk/l
+jfour/jknappen/ec/ecsx0800.600pk> </home/john/.texmf-var/fonts/pk/ljfour/jknapp
+en/ec/ectt0900.600pk> </home/john/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsi10
+00.600pk> </home/john/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1000.600pk> </
+home/john/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss1000.600pk> </home/john/.t
+exmf-var/fonts/pk/ljfour/jknappen/ec/ecsi1095.600pk> </home/john/.texmf-var/fon
+ts/pk/ljfour/jknappen/ec/ecss0800.600pk> </home/john/.texmf-var/fonts/pk/ljfour
+/jknappen/ec/eccc1095.600pk> </home/john/.texmf-var/fonts/pk/ljfour/jknappen/ec
+/ecss1095.600pk> </home/john/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss1440.60
+0pk> </home/john/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0600.600pk>
+Output written on po.pdf (25 pages, 967047 bytes).
 PDF statistics:
- 653 PDF objects out of 1000 (max. 8388607)
- 257 compressed objects within 3 object streams
- 36 named destinations out of 1000 (max. 500000)
- 119 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 774 PDF objects out of 1000 (max. 8388607)
+ 347 compressed objects within 4 object streams
+ 57 named destinations out of 1000 (max. 500000)
+ 155 words of extra memory for PDF output out of 10000 (max. 10000000)
 
